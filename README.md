@@ -1,2 +1,2 @@
 # TU-web-development
-TU web development courses school work.
+TU web development course's school work.
