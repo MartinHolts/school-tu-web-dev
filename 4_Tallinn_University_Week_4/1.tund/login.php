@@ -21,37 +21,35 @@
 	
 	$signupPasswordError = "*";
 	
+	// kas parooli muutuja on olemas?
 	if (isset ($_POST["signupPassword"])) {
-		
+
+		// kas parool on tühi
 		if (empty ($_POST["signupPassword"])) {
-			
 			$signupPasswordError = "* Väli on kohustuslik!";
-			
 		} else {
-			
-			// parool ei olnud tühi
-			
+
+			// Kas parooli pikkus on vähem kui 8.
 			if ( strlen($_POST["signupPassword"]) < 8 ) {
-				
 				$signupPasswordError = "* Parool peab olema vähemalt 8 tähemärkki pikk!";
-				
 			}
-			
 		}
-		
 	}
 	
 	//vaikimisi väärtus
 	$gender = "";
 	
+	// Kas sugu muutuja on olemas?
 	if (isset ($_POST["gender"])) {
+
+		// Kas sugu on tühi
 		if (empty ($_POST["gender"])) {
 			$genderError = "* Väli on kohustuslik!";
 		} else {
 			$gender = $_POST["gender"];
 		}
-		
 	}
+	
 	
 	if ( $signupEmailError == "*" AND
 		 $signupPasswordError == "*" AND
