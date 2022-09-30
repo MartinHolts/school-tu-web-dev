@@ -4,35 +4,20 @@
 	var_dump($GLOBALS);
 	require("./functions.php");
 	
-	 
-	//var_dump($_GET);
-	
-	//echo "<br>";
-	
-	//var_dump($_POST);
-	
-	//MUUTUJAD
+	//Emaili muutujad.
 	$signupEmailError = "*";
 	$signupEmail = "";
 	
-	//kas keegi vajutas nuppu ja see on olemas
-	
+	//kas emaili muutuja on olemas?
 	if (isset ($_POST["signupEmail"])) {
 		
-		//on olemas
 		// kas epost on tühi
 		if (empty ($_POST["signupEmail"])) {
-			
-			// on tühi
 			$signupEmailError = "* Väli on kohustuslik!";
-			
 		} else {
-			// email on olemas ja õige
 			$signupEmail = $_POST["signupEmail"];
-			
 		}
-		
-	} 
+	}
 	
 	$signupPasswordError = "*";
 	
@@ -109,31 +94,20 @@
 		<h1>Logi sisse</h1>
 		
 		<form method="POST" >
-			
 			<label>E-post</label><br>
 			<input name="loginEmail" type="email">
-			
 			<br><br>
-
 			<input name="loginPassword" placeholder="Parool" type="password">
-			
 			<br><br>
-			
 			<input type="submit" value="Logi sisse">
-		
 		</form>
 		
 		<h1>Loo kasutaja</h1>
-		
 		<form method="POST" >
-			
 			<label>E-post</label><br>
 			<input name="signupEmail" type="email" value="<?=$signupEmail;?>"> <?php echo $signupEmailError; ?>
-			
 			<br><br>
-
 			<input name="signupPassword" placeholder="Parool" type="password"> <?php echo $signupPasswordError; ?>
-			
 			<br><br>
 					
 			<?php if ($gender == "female") { ?>
@@ -147,16 +121,14 @@
 			<?php } else { ?>
 				<input type="radio" name="gender" value="male" > male<br>
 			<?php } ?>
-			
-			
+
 			<?php if ($gender == "other") { ?>
 				<input type="radio" name="gender" value="other" checked> other<br>
 			<?php } else { ?>
 				<input type="radio" name="gender" value="other" > other<br>
 			<?php } ?>
-			
+
 			<input type="submit" value="Loo kasutaja">
-		
 		</form>
 
 	</body>
