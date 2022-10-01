@@ -48,7 +48,7 @@
 		}
 	}
 	
-	// Kas vigu ei ole?
+	// Kas vigu ei ole ja kas kasutaja klõpsas registreeri nupule?
 	if ( $signupEmailError == "*" AND
 		 $signupPasswordError == "*" AND
 		 isset ($_POST["signupEmail"]) AND
@@ -65,12 +65,13 @@
 		signup($signupEmail, $password);
 	}
 	
-	//kas kasutaja tahab sisse logida
+	//Kas kasutaja klõpsas logi sisse nupule?
 	if ( isset($_POST["loginEmail"]) &&
 		 isset($_POST["loginPassword"]) &&
 		 !empty($_POST["loginPassword"]) &&
 		 !empty($_POST["loginPassword"])
 	) {
+		//Kutsun singup funktsiooni functions.php alt.
 		login($_POST["loginEmail"], $_POST["loginPassword"]);
 	}
 
