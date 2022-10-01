@@ -4,7 +4,6 @@
 	var_dump($GLOBALS);
 	require("./functions.php");
 	
-	//Emaili muutujad.
 	$signupEmailError = "*";
 	$signupEmail = "";
 	
@@ -36,13 +35,12 @@
 		}
 	}
 	
-	//vaikimisi väärtus
 	$gender = "";
 	
 	// Kas sugu muutuja on olemas?
 	if (isset ($_POST["gender"])) {
 
-		// Kas sugu on tühi
+		// Kas sugu on tühi?
 		if (empty ($_POST["gender"])) {
 			$genderError = "* Väli on kohustuslik!";
 		} else {
@@ -50,26 +48,21 @@
 		}
 	}
 	
-	
+	// Kas vigu ei ole?
 	if ( $signupEmailError == "*" AND
 		 $signupPasswordError == "*" AND
 		 isset ($_POST["signupEmail"]) AND
 		 isset ($_POST["signupPassword"])
-	)	{
-		
-		//vigu ei olnud, kõik on olemas
+	){
 		echo "Salvestan...<br>";
 		echo "email ".$signupEmail."<br>";
 		echo "parool".$_POST["signupPassword"]."<br>";
-		
+
 		$password = hash("sha512", $_POST["signupPassword"]);
-		
 		echo $password;
 		
+		//Kutsun singup funktsiooni functions.php alt.
 		signup($signupEmail, $password);
-
-		
-		
 	}
 	
 	//kas kasutaja tahab sisse logida
