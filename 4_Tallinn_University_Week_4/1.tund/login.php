@@ -1,13 +1,13 @@
 <?php 
 	
 	require("../../config.php");
-	var_dump($GLOBALS);
+	// var_dump($GLOBALS);
 	require("./functions.php");
 	
 	$signupEmailError = "*";
 	$signupEmail = "";
 	
-	//kas emaili muutuja on olemas?
+	// Kas keegi klõpsas registreeri nupu peale?
 	if (isset ($_POST["signupEmail"])) {
 		
 		// kas epost on tühi
@@ -20,7 +20,7 @@
 	
 	$signupPasswordError = "*";
 	
-	// kas parooli muutuja on olemas?
+	// Kas keegi klõpsas registreeri nupu peale?
 	if (isset ($_POST["signupPassword"])) {
 
 		// kas parool on tühi
@@ -37,7 +37,7 @@
 	
 	$gender = "";
 	
-	// Kas sugu muutuja on olemas?
+	// Kas keegi klõpsas registreeri nupu peale?
 	if (isset ($_POST["gender"])) {
 
 		// Kas sugu on tühi?

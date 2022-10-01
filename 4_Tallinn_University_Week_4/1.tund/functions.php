@@ -1,7 +1,4 @@
 <?php
-
-	$database = "if16_martholt_4";
-	
 	function signup($email, $password) {
 	
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
