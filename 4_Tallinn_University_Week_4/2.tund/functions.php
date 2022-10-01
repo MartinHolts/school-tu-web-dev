@@ -4,8 +4,6 @@
 	// tahame sessiooni kasutada
 	// saab kasutada nüüd $_SESSION muutujat
 	session_start();
-
-	$database = "if16_martholt_4";
 	
 	function signup($email, $password) {
 	

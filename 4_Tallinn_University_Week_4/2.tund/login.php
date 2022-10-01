@@ -1,7 +1,7 @@
 <?php 
 	
-	require("../../../config.php");
-	var_dump($GLOBALS);
+	require("../../config.php");
+	// var_dump($GLOBALS);
 	require("./functions.php");
 	
 	
@@ -9,7 +9,7 @@
 	if (isset($_SESSION["userId"])) {
 		header("Location: data.php");
 	}
-	 
+	
 	//var_dump($_GET);
 	
 	//echo "<br>";
