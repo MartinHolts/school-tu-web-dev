@@ -1,6 +1,6 @@
 <?php 
 	
-	require("../../config.php");
+	require("../config.php");
 	// var_dump($GLOBALS);
 	require("./functions.php");
 	
