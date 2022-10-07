@@ -17,9 +17,9 @@ $sql = "CREATE DATABASE myDB";
 
 // Check if successfully created database.
 if ($conn->query($sql) === TRUE) {
-	echo "Database created successfully";
+	echo "Database created successfully" . "<br>";
 } else {
-	echo "Error creating database: " . $conn->error;
+	echo "Error creating database: " . $conn->error . "<br>";
 }
 
 // Close connection.
@@ -42,9 +42,9 @@ $sql = "CREATE TABLE user_sample (
 
 // Check if successfully created table.
 if ($conn->query($sql) === TRUE) {
-	echo "Table MyGuests created successfully";
+	echo "Table MyGuests created successfully" . "<br>";
 } else {
-	echo "Error creating table: " . $conn->error;
+	echo "Error creating table: " . $conn->error . "<br>";
 }
 
 // Close connection.

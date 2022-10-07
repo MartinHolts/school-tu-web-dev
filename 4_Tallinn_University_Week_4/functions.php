@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	// see fail peab olema siis seotud kõigiga kus 
 	// tahame sessiooni kasutada
 	// saab kasutada nüüd $_SESSION muutujat
@@ -9,16 +8,15 @@
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		
 		$stmt = $mysqli->prepare("INSERT INTO user_sample (email, password) VALUE(?, ?)");
-		echo $mysqli->error;
+		echo $mysqli->error . "<br>";
 		
 		$stmt->bind_param("ss", $email, $password);
 		
 		if ($stmt->execute()) {
-			echo "õnnestus";
+			echo "õnnestus" . "<br>";
 		} else {
-			echo "<br>ERROR<br>".$stmt->error;
+			echo "<br>ERROR<br>".$stmt->error . "<br>";
 		}
-	
 	}
 
 	function login($email, $password) {
@@ -34,7 +32,7 @@
 			WHERE email = ?
 		");
 		
-		echo $mysqli->error;
+		echo $mysqli->error . "<br>";
 		
 		//asendan küsimärgi
 		$stmt->bind_param("s", $email);
@@ -51,7 +49,7 @@
 			$hash = hash("sha512", $password);
 			
 			if($hash == $passwordFromDb){
-				echo "Kasutaja $id logis sisse";
+				echo "Kasutaja $id logis sisse" . "<br>";
 				
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;

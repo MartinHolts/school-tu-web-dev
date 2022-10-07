@@ -1,26 +1,23 @@
 <?php 
+	session_start();
 	require("../config.php");
-	// var_dump($GLOBALS);
+	// var_dump($GLOBALS) . "<br>";
 	require("functions.php");
-	
 	
 	// kui on sisseloginud siis suunan data lehele
 	if (isset($_SESSION["userId"])) {
 		header("Location: data.php");
 	}
 	
-	//var_dump($_GET);
-	
+	//var_dump($_GET) . "<br>";
 	//echo "<br>";
-	
-	//var_dump($_POST);
+	//var_dump($_POST) . "<br>";
 	
 	//MUUTUJAD
 	$signupEmailError = "*";
 	$signupEmail = "";
 	
 	//kas keegi vajutas nuppu ja see on olemas
-	
 	if (isset ($_POST["signupEmail"])) {
 		
 		//on olemas
@@ -43,21 +40,14 @@
 	if (isset ($_POST["signupPassword"])) {
 		
 		if (empty ($_POST["signupPassword"])) {
-			
 			$signupPasswordError = "* Väli on kohustuslik!";
-			
 		} else {
 			
 			// parool ei olnud tühi
-			
 			if ( strlen($_POST["signupPassword"]) < 8 ) {
-				
 				$signupPasswordError = "* Parool peab olema vähemalt 8 tähemärkki pikk!";
-				
 			}
-			
 		}
-		
 	}
 	
 	//vaikimisi väärtus
@@ -69,7 +59,6 @@
 		} else {
 			$gender = $_POST["gender"];
 		}
-		
 	}
 	
 	if ( $signupEmailError == "*" AND
@@ -88,12 +77,10 @@
 		echo $password;
 		
 		signup($signupEmail, $password);
-
-		
-		
 	}
 	
 	$notice = "";
+
 	//kas kasutaja tahab sisse logida
 	if ( isset($_POST["loginEmail"]) &&
 		 isset($_POST["loginPassword"]) &&
@@ -102,7 +89,6 @@
 	) {
 		$notice = login($_POST["loginEmail"], $_POST["loginPassword"]);
 	}
-	
 
 ?>
 <!DOCTYPE html>
