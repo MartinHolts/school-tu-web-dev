@@ -35,7 +35,9 @@
 		echo $mysqli->error . "<br>";
 		
 		//asendan küsimärgi
+		echo "test1" . "<br>";
 		$stmt->bind_param("s", $email);
+		echo "test2" . "<br>";
 		
 		//rea kohta tulba väärtus
 		$stmt->bind_result($id, $emailFromDb, $passwordFromDb, $created);

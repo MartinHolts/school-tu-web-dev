@@ -70,7 +70,7 @@
 		//vigu ei olnud, kõik on olemas
 		echo "Salvestan...<br>";
 		echo "email ".$signupEmail."<br>";
-		echo "parool".$_POST["signupPassword"]."<br>";
+		echo "parool ".$_POST["signupPassword"]."<br>";
 		
 		$password = hash("sha512", $_POST["signupPassword"]);
 		
