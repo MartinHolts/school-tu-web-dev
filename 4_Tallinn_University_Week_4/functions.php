@@ -1,9 +1,8 @@
 <?php
-
+	session_start();
 	// see fail peab olema siis seotud kõigiga kus 
 	// tahame sessiooni kasutada
 	// saab kasutada nüüd $_SESSION muutujat
-	session_start();
 	
 	function signup($email, $password) {
 	

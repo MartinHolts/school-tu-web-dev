@@ -1,8 +1,7 @@
 <?php 
-	
-	require("../../config.php");
+	require("../config.php");
 	// var_dump($GLOBALS);
-	require("./functions.php");
+	require("functions.php");
 	
 	
 	// kui on sisseloginud siis suunan data lehele
