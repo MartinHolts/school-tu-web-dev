@@ -35,9 +35,9 @@ if ($conn->connect_error) {
 
 // Sql to create table.
 $sql = "CREATE TABLE user_sample (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-email VARCHAR(50) NOT NULL,
-password VARCHAR(128) NOT NULL
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(50) NOT NULL,
+  password VARCHAR(128) NOT NULL
 )";
 
 // Check if successfully created table.
