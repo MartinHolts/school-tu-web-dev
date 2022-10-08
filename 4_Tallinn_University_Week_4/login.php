@@ -1,5 +1,4 @@
 <?php 
-	session_start();
 	require("../config.php");
 	// var_dump($GLOBALS) . "<br>";
 	require("functions.php");
