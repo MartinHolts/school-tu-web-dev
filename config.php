@@ -19,7 +19,7 @@
 	if ($conn->query($sql) === TRUE) {
 		echo "Database created successfully" . "<br>";
 	} else {
-		echo "Error creating database: " . $conn->error . "<br>";
+		//echo "Error creating database: " . $conn->error . "<br>";
 	}
 
 	// Close connection.
@@ -45,7 +45,7 @@
 	if ($conn->query($sql) === TRUE) {
 		echo "Table MyGuests created successfully" . "<br>";
 	} else {
-		echo "Error creating table: " . $conn->error . "<br>";
+		//echo "Error creating table: " . $conn->error . "<br>";
 	}
 
 	// Close connection.

@@ -2,6 +2,7 @@
 	// see fail peab olema siis seotud kõigiga kus 
 	// tahame sessiooni kasutada
 	// saab kasutada nüüd $_SESSION muutujat
+	session_start();
 	
 	function signup($email, $password) {
 	
@@ -32,12 +33,12 @@
 			WHERE email = ?
 		");
 		
-		echo $mysqli->error . "<br>";
+		//echo $mysqli->error . "<br>";
 		
 		//asendan küsimärgi
-		echo "test1" . "<br>";
+		//echo "test1" . "<br>";
 		$stmt->bind_param("s", $email);
-		echo "test2" . "<br>";
+		//echo "test2" . "<br>";
 		
 		//rea kohta tulba väärtus
 		$stmt->bind_result($id, $emailFromDb, $passwordFromDb, $created);
@@ -51,7 +52,7 @@
 			$hash = hash("sha512", $password);
 			
 			if($hash == $passwordFromDb){
-				echo "Kasutaja $id logis sisse" . "<br>";
+				//echo "Kasutaja $id logis sisse" . "<br>";
 				
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;
