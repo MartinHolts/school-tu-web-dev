@@ -13,13 +13,13 @@
 	}
 
 	// Create database.
-	$sql = "CREATE DATABASE myDB";
+	$sql = "CREATE DATABASE IF NOT EXISTS myDB";
 
 	// Check if successfully created database.
 	if ($conn->query($sql) === TRUE) {
-		echo "Database created successfully" . "<br>";
+		// echo "Database created successfully" . "<br>";
 	} else {
-		//echo "Error creating database: " . $conn->error . "<br>";
+		echo "Error creating database: " . $conn->error . "<br>";
 	}
 
 	// Close connection.
@@ -34,7 +34,7 @@
 	}
 
 	// Sql to create table.
-	$sql = "CREATE TABLE user_sample (
+	$sql = "CREATE TABLE IF NOT EXISTS user_sample (
 		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		email VARCHAR(50) NOT NULL,
 		password VARCHAR(128) NOT NULL,
@@ -43,9 +43,9 @@
 
 	// Check if successfully created table.
 	if ($conn->query($sql) === TRUE) {
-		echo "Table MyGuests created successfully" . "<br>";
+		// echo "Table MyGuests created successfully" . "<br>";
 	} else {
-		//echo "Error creating table: " . $conn->error . "<br>";
+		echo "Error creating table: " . $conn->error . "<br>";
 	}
 
 	// Close connection.
