@@ -22,23 +22,17 @@
 
 	function login($email, $password) {
 		
-		$notice = "";
-		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
 		
 		$stmt = $mysqli->prepare("
-		
 			SELECT id, email, password, created
 			FROM user_sample
 			WHERE email = ?
 		");
-		
 		//echo $mysqli->error . "<br>";
 		
 		//asendan küsimärgi
-		//echo "test1" . "<br>";
 		$stmt->bind_param("s", $email);
-		//echo "test2" . "<br>";
 		
 		//rea kohta tulba väärtus
 		$stmt->bind_result($id, $emailFromDb, $passwordFromDb, $created);
@@ -58,26 +52,14 @@
 				$_SESSION["userEmail"] = $emailFromDb;
 				
 				header("Location: data.php");
-				
-				
-				
-				
-				
-				
-				
 			} else {
 				$notice = "parool vale";
 			}
-			
 		} else {
 			
 			//ei olnud ühtegi rida
 			$notice =  "Sellise emailiga $email kasutjat ei ole olemas";
 		}
-		
 		return $notice;
-		
 	}
-	
-	
 ?>

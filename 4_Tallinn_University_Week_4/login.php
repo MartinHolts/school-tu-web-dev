@@ -1,5 +1,7 @@
 <?php 
+	// Create database and table.
 	require("../config.php");
+	
 	// var_dump($GLOBALS) . "<br>";
 	require("functions.php");
 	

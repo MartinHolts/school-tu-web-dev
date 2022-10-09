@@ -20,5 +20,5 @@
 <h1>Data</h1>
 <p>
 	Tere tulemast <?=$_SESSION["userEmail"];?>!
-	<a href="?logout=1">logi välja</a> <!-- Lisab ?logout=1 aadressi reale log -->
+	<a href="?logout=1">logi välja</a> <!-- Lisab ?logout=1 aadressi reale -->
 </p>
