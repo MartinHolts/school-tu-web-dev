@@ -17,7 +17,7 @@
 		
 	}
 	
-	
+	// Kas keegi vajutas submit age ja color alt ja väljad ei olnud tühjad.
 	if ( isset($_POST["age"]) && 
 		 isset($_POST["color"]) && 
 		 !empty($_POST["age"]) &&

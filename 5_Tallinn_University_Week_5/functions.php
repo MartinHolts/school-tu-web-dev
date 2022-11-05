@@ -126,23 +126,23 @@
 		
 		return $results;
 		
-		function cleanInput($input) {
-			
-			// input = " romil ";
-			$input = trim($input);
-			// input = "romil";
-			
-			// võtab välja 
-			// input = "/romil";
-			$input = stripslashes($input);
-			// input = "romil";
-			
-			// html asendab, nt "<" saab ""
-			$input = htmlspecialchars($input);
-			
-			return $input;
-			
-		}
+	}
+		
+	function cleanInput($input) {
+		
+		// input = " romil ";
+		$input = trim($input);
+		// input = "romil";
+		
+		// võtab välja 
+		// input = "/romil";
+		$input = stripslashes($input);
+		// input = "romil";
+		
+		// html asendab, nt "<" saab ""
+		$input = htmlspecialchars($input);
+		
+		return $input;
 		
 	}
 	
