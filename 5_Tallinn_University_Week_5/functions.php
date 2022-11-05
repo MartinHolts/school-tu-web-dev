@@ -1,13 +1,11 @@
 <?php 
 
-	require("../../config.php");
+	require("../config.php");
 	
 	// see fail peab olema siis seotud kõigiga kus
 	// tahame sessiooni kasutada
 	// saab kasutada nüüd $_SESSION muutujat
 	session_start();
-	
-	// functions.php
 	
 	function signup($email, $password) {
 		
@@ -74,19 +72,12 @@
 			$notice = "Sellise emailiga ".$email." kasutajat ei ole olemas";
 		}
 		
-		
 		$stmt->close();
 		$mysqli->close();
 		
 		return $notice;
 		
-		
-		
-		
-		
 	}
-	
-	
 	
 	function saveEvent($age, $color) {
 		
@@ -142,14 +133,14 @@
 			// input = "romil";
 			
 			// võtab välja 
+			// input = "/romil";
 			$input = stripslashes($input);
+			// input = "romil";
 			
 			// html asendab, nt "<" saab ""
 			$input = htmlspecialchars($input);
 			
 			return $input;
-			
-			
 			
 		}
 		

@@ -8,7 +8,6 @@
 		exit();
 	}
 	
-	
 	//kas aadressireal on logout
 	if (isset($_GET["logout"])) {
 		
