@@ -33,12 +33,26 @@
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	// Sql to create table.
+	// Sql to create table user_sample.
 	$sql = "CREATE TABLE IF NOT EXISTS user_sample (
 		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		email VARCHAR(50) NOT NULL,
 		password VARCHAR(128) NOT NULL,
 		created boolean
+	)";
+
+	// Check if successfully created table.
+	if ($conn->query($sql) === TRUE) {
+		// echo "Table MyGuests created successfully" . "<br>";
+	} else {
+		echo "Error creating table: " . $conn->error . "<br>";
+	}
+	
+	// Sql to create table user_sample.
+	$sql = "CREATE TABLE IF NOT EXISTS whistle (
+		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		age INT(50) NOT NULL,
+		color VARCHAR(128) NOT NULL
 	)";
 
 	// Check if successfully created table.

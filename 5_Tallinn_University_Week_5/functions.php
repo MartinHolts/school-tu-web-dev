@@ -1,13 +1,12 @@
 <?php 
 
-	require("../../../config.php");
+	require("../../config.php");
 	
 	// see fail peab olema siis seotud kõigiga kus
 	// tahame sessiooni kasutada
 	// saab kasutada nüüd $_SESSION muutujat
 	session_start();
 	
-	$database = "if16_martholt_4";
 	// functions.php
 	
 	function signup($email, $password) {
@@ -56,7 +55,7 @@
 			$hash = hash("sha512", $password);
 			
 			if ($hash == $passwordFromDb) {
-				echo "Kasutaja $id logis sisse";
+				//echo "Kasutaja $id logis sisse";
 				
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;
@@ -156,31 +155,4 @@
 		
 	}
 	
-	
-	
-	
-	
-	
-	/*function sum($x, $y) {
-		
-		return $x + $y;
-		
-	}
-	
-	echo sum(12312312,12312355553);
-	echo "<br>";
-	
-	
-	function hello($firstname, $lastname) {
-		return 
-		"Tere tulemast "
-		.$firstname
-		." "
-		.$lastname
-		."!";
-	}
-	
-	echo hello("romil", "robtsenkov");
-	*/
-
 ?>
