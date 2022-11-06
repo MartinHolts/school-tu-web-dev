@@ -2,7 +2,6 @@
 	//var_dump($_POST);
 	//var_dump(isset($_POST["signupEmail"]));
 	
-	
 	require("functions.php");
 	
 	// kui on sisseloginud siis suunan data lehele
@@ -12,9 +11,7 @@
 	}
 	
 	//var_dump($_GET);
-	
 	//echo "<br>";
-	
 	//var_dump($_POST);
 	
 	//MUUTUJAD

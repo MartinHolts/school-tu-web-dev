@@ -134,8 +134,8 @@
 		$input = trim($input);
 		// input = "romil";
 		
-		// võtab välja 
-		// input = "/romil";
+		// võtab välja \
+		// input = "\romil";
 		$input = stripslashes($input);
 		// input = "romil";
 		

@@ -7,9 +7,6 @@
 	// saab kasutada nüüd $_SESSION muutujat
 	session_start();
 	
-	$database = "if16_romil";
-	// functions.php
-	
 	function signup($email, $password) {
 		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
@@ -56,7 +53,7 @@
 			$hash = hash("sha512", $password);
 			
 			if ($hash == $passwordFromDb) {
-				echo "Kasutaja $id logis sisse";
+				// echo "Kasutaja $id logis sisse";
 				
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;
@@ -69,26 +66,18 @@
 				$notice = "parool vale";
 			}
 			
-			
 		} else {
 			
 			//ei olnud ühtegi rida
 			$notice = "Sellise emailiga ".$email." kasutajat ei ole olemas";
 		}
 		
-		
 		$stmt->close();
 		$mysqli->close();
 		
 		return $notice;
 		
-		
-		
-		
-		
 	}
-	
-	
 	
 	function saveEvent($age, $color) {
 		
@@ -128,7 +117,6 @@
 			$human->id = $id;
 			$human->age = $age;
 			$human->lightColor = $color;
-			
 			
 			//echo $color."<br>";
 			array_push($results, $human);
