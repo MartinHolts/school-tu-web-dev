@@ -61,6 +61,19 @@
 	} else {
 		echo "Error creating table: " . $conn->error . "<br>";
 	}
+	
+	// Sql to create table interests.
+	$sql = "CREATE TABLE IF NOT EXISTS interests (
+		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		interest VARCHAR(128) NOT NULL
+	)";
+
+	// Check if successfully created table.
+	if ($conn->query($sql) === TRUE) {
+		// echo "Table MyGuests created successfully" . "<br>";
+	} else {
+		echo "Error creating table: " . $conn->error . "<br>";
+	}
 
 	// Close connection.
 	$conn->close();
