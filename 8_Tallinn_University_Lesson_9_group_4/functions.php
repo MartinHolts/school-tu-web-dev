@@ -5,7 +5,7 @@
 	// see fail peab olema siis seotud kõigiga kus
 	// tahame sessiooni kasutada
 	// saab kasutada nüüd $_SESSION muutujat
-	
+
 	session_start();
 	
 	function signup($email, $password) {
@@ -54,7 +54,7 @@
 			$hash = hash("sha512", $password);
 			
 			if ($hash == $passwordFromDb) {
-				echo "Kasutaja $id logis sisse";
+				//echo "Kasutaja $id logis sisse";
 				
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;
