@@ -175,6 +175,42 @@
 		
 	}
 	
+	function getAllInterests() {
+		
+		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+		
+		$stmt = $mysqli->prepare("
+			SELECT id, interest
+			FROM interests
+		");
+		echo $mysqli->error;
+		
+		$stmt->bind_result($id, $interest);
+		$stmt->execute();
+		
+		
+		//tekitan massiivi
+		$result = array();
+		
+		// tee seda seni, kuni on rida andmeid
+		// mis vastab select lausele
+		while ($stmt->fetch()) {
+			
+			//tekitan objekti
+			$i = new StdClass();
+			
+			$i->id = $id;
+			$i->interest = $interest;
+		
+			array_push($result, $i);
+		}
+		
+		$stmt->close();
+		$mysqli->close();
+		
+		return $result;
+	}
+	
 	function saveUserInterest ($interest) {
 		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
@@ -217,42 +253,6 @@
 		$stmt->close();
 		$mysqli->close();
 		
-	}
-	
-	function getAllInterests() {
-		
-		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
-		
-		$stmt = $mysqli->prepare("
-			SELECT id, interest
-			FROM interests
-		");
-		echo $mysqli->error;
-		
-		$stmt->bind_result($id, $interest);
-		$stmt->execute();
-		
-		
-		//tekitan massiivi
-		$result = array();
-		
-		// tee seda seni, kuni on rida andmeid
-		// mis vastab select lausele
-		while ($stmt->fetch()) {
-			
-			//tekitan objekti
-			$i = new StdClass();
-			
-			$i->id = $id;
-			$i->interest = $interest;
-		
-			array_push($result, $i);
-		}
-		
-		$stmt->close();
-		$mysqli->close();
-		
-		return $result;
 	}
 	
 	function getUserInterests() {
