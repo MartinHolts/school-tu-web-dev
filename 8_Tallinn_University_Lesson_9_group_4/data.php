@@ -18,13 +18,11 @@
 		
 	}
 	
-	
 	if ( isset($_POST["age"]) && 
 		 isset($_POST["color"]) && 
 		 !empty($_POST["age"]) &&
 		 !empty($_POST["color"]) 
 	) {
-		
 		
 		$color = cleanInput($_POST["color"]);
 		
@@ -123,4 +121,3 @@
 
 
 ?>
-
