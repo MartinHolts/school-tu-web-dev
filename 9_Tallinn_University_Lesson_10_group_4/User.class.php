@@ -3,14 +3,14 @@ class User {
 	
 	private $connection;
 	
-	// käivitatakse siis kui on = new User(see jõuab siia)
+	// kï¿½ivitatakse siis kui on = new User(see jï¿½uab siia)
 	function __construct($mysqli){
 		// this viitab sellele klassile ja selle 
 		// klassi muutujale
 		$this->connection = $mysqli;
 	}
 	
-	/* KÕIK FUNKTSIOONID*/
+	/* Kï¿½IK FUNKTSIOONID*/
 	
 	function login($email, $password) {
 		
@@ -24,22 +24,22 @@ class User {
 		
 		echo $this->connection->error;
 		
-		//asendan küsimärgi
+		//asendan kï¿½simï¿½rgi
 		$stmt->bind_param("s", $email);
 		
-		//rea kohta tulba väärtus
+		//rea kohta tulba vï¿½ï¿½rtus
 		$stmt->bind_result($id, $emailFromDb, $passwordFromDb, $created);
 		
 		$stmt->execute();
 		
 		//ainult SELECT'i puhul
 		if($stmt->fetch()) {
-			// oli olemas, rida käes
+			// oli olemas, rida kï¿½es
 			//kasutaja sisestas sisselogimiseks
 			$hash = hash("sha512", $password);
 			
 			if ($hash == $passwordFromDb) {
-				echo "Kasutaja $id logis sisse";
+				//echo "Kasutaja $id logis sisse";
 				
 				$_SESSION["userId"] = $id;
 				$_SESSION["userEmail"] = $emailFromDb;
@@ -55,7 +55,7 @@ class User {
 			
 		} else {
 			
-			//ei olnud ühtegi rida
+			//ei olnud ï¿½htegi rida
 			$notice = "Sellise emailiga ".$email." kasutajat ei ole olemas";
 		}
 		
@@ -73,7 +73,7 @@ class User {
 		$stmt->bind_param("ss", $email, $password);
 		
 		if ( $stmt->execute() ) {
-			echo "õnnestus";
+			echo "ï¿½nnestus";
 		} else {
 			echo "ERROR ".$stmt->error;
 		}

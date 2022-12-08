@@ -54,7 +54,8 @@
 	$sql = "CREATE TABLE IF NOT EXISTS whistle (
 		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		age INT(50) NOT NULL,
-		color VARCHAR(128) NOT NULL
+		color VARCHAR(128) NOT NULL,
+		deleted BOOLEAN
 	)";
 
 	// Check if successfully created table whistle.

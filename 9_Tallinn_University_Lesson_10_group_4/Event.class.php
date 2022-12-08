@@ -30,6 +30,9 @@ class Event {
 			FROM whistle
 			WHERE deleted IS NULL
 		");
+		
+		// echo $this->connection->error;
+		
 		$stmt->bind_result($id, $age, $color);
 		$stmt->execute();
 		
