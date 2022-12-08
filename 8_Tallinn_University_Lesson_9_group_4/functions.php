@@ -233,7 +233,7 @@
 		}
 		
 		// kui ei olnud, jõuame siia
-		$stmt->close();		
+		$stmt->close();
 		
 		$stmt = $mysqli->prepare("
 			INSERT INTO user_interests_4 (user_id, interest_id) 
