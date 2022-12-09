@@ -99,7 +99,7 @@ class Event {
 		// kas õnnestus salvestada
 		if($stmt->execute()){
 			// õnnestus
-			echo "salvestus õnnestus!";
+			// echo "salvestus õnnestus!";
 		}
 		
 		$stmt->close();
