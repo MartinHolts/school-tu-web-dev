@@ -14,8 +14,6 @@
 		exit();
 	}
 	
-	
-	
 	//kas kasutaja uuendab andmeid
 	if(isset($_POST["update"])){
 		
@@ -29,8 +27,6 @@
 	//saadan kaasa id
 	$p = $Event->getSinglePerosonData($_GET["id"]);
 	var_dump($p);
-
-	
 ?>
 <br><br>
 <a href="data.php"> tagasi </a>
@@ -46,8 +42,4 @@
 	<input type="submit" name="update" value="Salvesta">
   </form>
   
-  
   <a href="?id=<?=$_GET["id"];?>&delete=true">kustuta</a>
-  
-  
-  

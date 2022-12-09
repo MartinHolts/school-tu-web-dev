@@ -107,24 +107,19 @@ class Event {
 	}
 	
 	function deletePerson($id){
-    	
-        $database = "if16_romil";		
 		
-		$stmt = $this->connection->prepare("
-		UPDATE whistle SET deleted=NOW()
-		WHERE id=? AND deleted IS NULL");
+		$stmt = $this->connection->prepare("UPDATE whistle SET deleted=NOW() WHERE id=? AND deleted IS NULL");
+
 		$stmt->bind_param("i",$id);
 		
 		// kas õnnestus salvestada
 		if($stmt->execute()){
 			// õnnestus
-			echo "salvestus õnnestus!";
+			// echo "salvestus õnnestus!";
 		}
 		
 		$stmt->close();
 		
 	}
-	
-	
 }
 ?>
