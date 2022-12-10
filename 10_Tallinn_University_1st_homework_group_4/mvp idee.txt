@@ -1,1 +1,0 @@
-Leheküljel saab küsimusi küsida ja neile vastata. Algus on plaan, et ainult mängude teemal saab küsimusi käsida. Mängudel oleks veel alamteemad nagu strateegi mängud, fps mängud, rpg mängud jne. Eraldi ei ole vaja kasutajat teha küsimuste küsimiseks ja neile vastamiseks. Võib teha kasutaja, kui soov on jälgida, mida enda kasutajaga on küsitud ja millele vastatud jne.
