@@ -1,4 +1,6 @@
-# TU-web-development
-TU web development course's school work.
+# TU-Web-Development
+School assignments from Tallinn University's web development course.
 
-You can run docker-compose to start php and mysql server to run the php code. You can also use localhost server like xampp to create server.
+The functions and comments in the code are written in Estonian, as the studies at Tallinn University were conducted in Estonian.
+
+To run the PHP code, you can use docker-compose to start the PHP and MySQL servers. Alternatively, you can use a local server like XAMPP.
